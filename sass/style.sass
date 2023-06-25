@@ -267,9 +267,11 @@ body
   &__row
     display: flex
     justify-content: space-between
+    gap: 30px
 
 .contact-main
   max-width: 445px
+  flex: 1
   &__title
     @include font($fw: 700, $fz: 88px, $lh: 88px)
     letter-spacing: -2.5px
@@ -280,6 +282,7 @@ body
 
 .contact-form
   max-width: 445px
+  flex: 1
 
   textarea
     resize: none
@@ -336,13 +339,43 @@ body
     align-items: center
     justify-content: space-between
 
-  &-social
+.footer-social:hover
+  path
+    transition: .5s ease
+    fill: $greens
 
+@media (max-width: 800px)
 
-@media (max-width: 970px) {
-  .contact-main
-    flex: 1
-      
+  .contact
+    &__row
+      flex-direction: column
+      // align-items: center
+      justify-content: center
+      align-items: center
   .contact-form
-    flex: 1 0 1
-}
+    width: 100%
+
+  .contact-main
+    text-align: center
+    &__title
+      @include font($fw: 700, $fz: 72px, $lh: 72px)
+      letter-spacing: -2.045px
+
+    &__text
+      margin-top: 36px
+      @include font()
+
+@media (max-width: 480px)
+  .footer-row
+    flex-direction: column
+    gap: 20px
+
+@media (max-width: 375px)
+  .contact-main
+    &__title
+      @include font($fw: 700, $fz: 40px, $lh: 40px)
+      letter-spacing: -1.136px
+
+    &__text
+      margin-top: 36px
+      @include font($fw: 500, $fz: 16px, $lh: 26px)
